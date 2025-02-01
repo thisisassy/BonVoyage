@@ -4,35 +4,65 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
 	<section>
-		<h1>New</h1>
-		<article>
-			<a href="/posts/">
-				<figure><img src="/sample" alt="/title" /></figure>
-				<div>
-					<h2>記事タイトルが入ります。</h2>
-					<p>記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。</p>
+		<h4 class="section__title">New</h4>
+		<div class="article__group">
+			<article class="newest">
+				<a href="/posts/">
+					<figure><img src="/sample" alt="/title" /></figure>
+					<div class="article__text">
+						<h2 class="title">記事タイトルが入ります。</h2>
+						<p>記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。</p>
+					</div>
+				</a>
+				<div class="article__meta">
+					<time datetime="">2025-02-01</time>
+					<p>Category</p>
 				</div>
-			</a>
-			<div>
-				<time datetime="">2025-02-01</time>
-				<p>Category</p>
-			</div>
-		</article>
+			</article>
+			<article>
+				<a href="/posts/">
+					<figure><img src="/sample" alt="/title" /></figure>
+					<div class="article__text">
+						<h2 class="title">記事タイトルが入ります。</h2>
+						<p>記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。</p>
+					</div>
+				</a>
+				<div class="article__meta">
+					<time datetime="">2025-02-01</time>
+					<p>Category</p>
+				</div>
+			</article>
+			<article>
+				<a href="/posts/">
+					<figure><img src="/sample" alt="/title" /></figure>
+					<div class="article__text">
+						<h2 class="title">記事タイトルが入ります。</h2>
+						<p>記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。</p>
+					</div>
+				</a>
+				<div class="article__meta">
+					<time datetime="">2025-02-01</time>
+					<p>Category</p>
+				</div>
+			</article>
+		</div>
 	</section>
 	<section>
-		<h1>Popular</h1>
-		<article>
-			<a href="/posts/">
-				<figure><img src="/sample" alt="/title" /></figure>
-				<div>
-					<p>Category</p>
-					<h2>記事タイトルが入ります。</h2>
-				</div>
-			</a>
-			<div>
-				<time datetime="">2025-02-01</time>
-				<li>tag</li>
-			</div>
-		</article>
+		<h4 class="section__title">Popular</h4>
+		<div class="article__group">
+			<article>
+				<a href="/posts/">
+					<figure><img src="/sample" alt="/title" /></figure>
+					<p class="category">Category</p>
+					<div class="article__info">
+						<h2 class="title">記事タイトルが入ります。</h2>
+						<div class="article__meta">
+							<time datetime="">2025-02-01</time>
+							<li>タグ</li>
+						</div>
+					</div>
+				</a>
+			</article>
+		</div>
 	</section>
 </Layout>
