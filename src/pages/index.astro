@@ -3,5 +3,36 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	This is a OneBagTravel media. Bon Voyage 🧳🛩️🌏
+	<section>
+		<h1>New</h1>
+		<article>
+			<a href="/posts/">
+				<figure><img src="/sample" alt="/title" /></figure>
+				<div>
+					<h2>記事タイトルが入ります。</h2>
+					<p>記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。</p>
+				</div>
+			</a>
+			<div>
+				<time datetime="">2025-02-01</time>
+				<p>Category</p>
+			</div>
+		</article>
+	</section>
+	<section>
+		<h1>Popular</h1>
+		<article>
+			<a href="/posts/">
+				<figure><img src="/sample" alt="/title" /></figure>
+				<div>
+					<p>Category</p>
+					<h2>記事タイトルが入ります。</h2>
+				</div>
+			</a>
+			<div>
+				<time datetime="">2025-02-01</time>
+				<li>tag</li>
+			</div>
+		</article>
+	</section>
 </Layout>
