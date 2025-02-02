@@ -1,7 +1,13 @@
+@use "./mixins";
+
 .page__container {
   max-width: 800px;
   margin: 0 auto;
   padding: 56px 40px 0;
+  @include mixins.respond-to("sm") {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 .page__entry {
   padding-top: 40px;
@@ -31,14 +37,19 @@
       transparent 50%
     );
     background-size: 8px 8px;
-    width: 400px;
+    max-width: 400px;
     margin: 40px auto;
   }
 }
 .entry-title {
   line-height: 1.4;
 }
-
+.exerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 // 404 page
 .error__container {
   h1 {
