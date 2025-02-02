@@ -9,7 +9,7 @@ main {
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 24px;
 }
 
 // Header
@@ -57,7 +57,7 @@ main {
 // Index
 
 section {
-  padding: 56px 24px 80px;
+  padding: 56px 0 80px;
 }
 .section__title {
   line-height: 180%;

@@ -1,0 +1,60 @@
+.page__container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 56px 40px 0;
+}
+.page__entry {
+  padding-top: 40px;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 32px 0;
+  }
+  ul,
+  ol {
+    margin-inline-start: 16px;
+  }
+  p {
+    font-size: 17px;
+    line-height: 1.9;
+  }
+  hr {
+    height: 8px;
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--border-color) 0,
+      var(--border-color) 1px,
+      transparent 0,
+      transparent 50%
+    );
+    background-size: 8px 8px;
+    width: 400px;
+    margin: 40px auto;
+  }
+}
+.entry-title {
+  line-height: 1.4;
+}
+
+// 404 page
+.error__container {
+  h1 {
+    margin-bottom: 40px;
+  }
+  a {
+    display: block;
+    max-width: 240px;
+    margin: 40px auto 0;
+    padding: 8px 12px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+    font-weight: 600;
+    &:hover {
+      background: var(--primary-color);
+      color: var(--white);
+    }
+  }
+}
