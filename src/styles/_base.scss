@@ -1,0 +1,85 @@
+// BEM （block__element--modifier）の規則で書くこと
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Inter", "Hiragino Kaku Gothic ProN", "Noto Sans CJK JP",
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--text-color);
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: currentColor;
+  &:hover {
+    opacity: 0.8;
+    transition: color 0.3s ease-in-out;
+  }
+}
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+// Typography
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  line-height: 1.4;
+  color: var(--primary-color);
+}
+
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-size: 24px;
+}
+h5 {
+  font-size: 21px;
+}
+h6 {
+  font-size: 19px;
+}
+hr {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+// Utilities
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
