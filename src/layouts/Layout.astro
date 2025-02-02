@@ -1,7 +1,12 @@
 ---
+import SEO from '../components/SEO.astro';
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.scss";
+
+const siteTitle = "CarryOnMyWay!";
+const { title, description, url } = Astro.props;
+const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle; 
 ---
 <!doctype html>
 <html lang="ja">
@@ -10,7 +15,8 @@ import "../styles/global.scss";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>CarryOnMyWay!</title>
+		<title>{fullTitle}</title>
+		<SEO title={title} description={description} url={url} />
 	</head>
 	<body class="layout">
 		<Header />

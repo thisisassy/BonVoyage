@@ -27,6 +27,11 @@ main {
     font-family: var(--title-font);
     line-height: 80px;
     text-align: center;
+    a {
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
   nav {
     background-color: var(--white);
