@@ -2,6 +2,24 @@
 import Layout from '../layouts/Layout.astro';
 import About from '../components/About.astro';
 import Ad from '../components/Ad.astro';
+import { newtClient } from '../lib/newt'
+import type { Article } from '../lib/newt'
+
+const { items: articles } = await newtClient.getContents<Article>({
+  appUid: 'blog',
+  modelUid: 'article',
+  query: {
+    select: ['title','_sys', 'slug', 'body', 'coverImage'],
+		order: ['-_sys.createdAt'],
+		limit: 10,
+  },
+})
+
+const latestArticles = articles.slice(0, 3);
+
+// シャッフルしてランダム記事を3件選択
+const shuffleArray = (array: any[]) => array.sort(() => Math.random() - 0.5);
+const randomArticles = shuffleArray(articles).slice(0, 6);
 ---
 
 <Layout>
@@ -10,33 +28,21 @@ import Ad from '../components/Ad.astro';
 			<section>
 				<h4 class="section__title">New</h4>
 				<div class="new-entry-list">
-					<article class="entry">
-						<a href="/" class="entry__link">
-							<figure><img src="../src/assets/ogimage.jpg" alt="ogimage" width="160" height="160" /></figure>
-							<div class="entry-list-title">
-								<h2 class="title">来るべく春に向けて気持ちを整えるために読みたい3冊。</h2>
-								<p class="date"><time>2025-02-03</time></p>
-							</div>
-						</a>
-					</article>
-					<article class="entry">
-						<a href="/" class="entry__link">
-							<figure><img src="../src/assets/ogimage.jpg" alt="ogimage" width="160" height="160" /></figure>
-							<div class="entry-list-title">
-								<h2 class="title">クソみたいな世界を生き抜くためのパンク的読書。Vol.24</h2>
-								<p class="date"><time>2025-02-03</time></p>
-							</div>
-						</a>
-					</article>
-					<article class="entry">
-						<a href="/" class="entry__link">
-							<figure><img src="../src/assets/ogimage.jpg" alt="ogimage" width="160" height="160" /></figure>
-							<div class="entry-list-title">
-								<h2 class="title">肌寒い秋の夜長にミントティーでも飲みながら読みたい3冊。</h2>
-								<p class="date"><time>2025-02-03</time></p>
-							</div>
-						</a>
-					</article>
+					{
+						latestArticles.map((article) => {
+							return (
+							<article class="entry">
+								<a href={`/posts/${article.slug}`} class="entry__link">
+								<figure><img src={article.coverImage['src']} alt="ogimage" /></figure>
+								<div class="entry-list-title">
+									<h2 class="title">{article.title}</h2>
+									<p class="date"><time>{new Date(article._sys.createdAt).toISOString().split('T')[0]}</time></p>
+								</div>
+								</a>
+							</article>
+							)
+						})
+					}
 				</div>
 				<div class="see-more__button"><a href="/archive">もっとみる</a></div>
 			</section>
@@ -53,36 +59,22 @@ import Ad from '../components/Ad.astro';
 			<section>
 				<h4 class="section__title">Pickup</h4>
 				<div class="popular-entry-list">
-					<article class="entry">
-						<a href="/" class="entry__link">
-							<figure><img src="../src/assets/ogimage.jpg" alt="ogimage" width="160" height="160" /></figure>
+					{randomArticles.length > 0 ? (
+						randomArticles.map(article => (
+						<article class="entry">
+						<a href={`/posts/${article.slug}`} class="entry__link">
+							<figure><img src={article.coverImage.src} alt={article.title} class="pickup-image" /></figure>
 							<div class="entry-list-title">
 								<p class="category">Category</p>
-								<h2 class="title">2泊3日、青森を堪能する。八甲田山と遭難と寒さと。</h2>
-								<p class="date"><time>2025-02-03</time></p>
+								<h2 class="title">{article.title}</h2>
+								<p class="date"><time>{new Date(article._sys.createdAt).toISOString().split('T')[0]}</time></p>
 							</div>
 						</a>
 					</article>
-					<article class="entry">
-						<a href="/" class="entry__link">
-							<figure><img src="../src/assets/ogimage.jpg" alt="ogimage" width="160" height="160" /></figure>
-							<div class="entry-list-title">
-								<p class="category">Category</p>
-								<h2 class="title">青森で海鮮丼ランチ</h2>
-								<p class="date"><time>2025-02-03</time></p>
-							</div>
-						</a>
-					</article>
-					<article class="entry">
-						<a href="/" class="entry__link">
-							<figure><img src="../src/assets/ogimage.jpg" alt="ogimage" width="160" height="160" /></figure>
-							<div class="entry-list-title">
-								<p class="category">Category</p>
-								<h2 class="title">1泊2日、30歳。大人ひとりで行く沖縄・那覇</h2>
-								<p class="date"><time>2025-02-03</time></p>
-							</div>
-						</a>
-					</article>
+						))
+					) : (
+						<p>記事がありません</p>
+					)}
 				</div>
 			</section>
 		</div>
