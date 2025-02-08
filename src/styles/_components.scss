@@ -1,0 +1,35 @@
+// Advertisement
+.module-ad {
+  h6 {
+    font-size: 14px;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+// About
+.module-about {
+  text-align: center;
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 24px;
+    object-fit: cover;
+  }
+  a {
+    font-size: 16px;
+  }
+}
+.about-title {
+  margin: 16px 0;
+  h6 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+}
