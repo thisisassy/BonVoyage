@@ -2,6 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 import About from '../components/About.astro';
 import Ad from '../components/Ad.astro';
+import { newtClient } from '../lib/newt'
+import type { Article } from '../lib/newt'
+
+const { items: articles } = await newtClient.getContents<Article>({
+  appUid: 'blog',
+  modelUid: 'article',
+  query: {
+    select: ['title', 'slug', 'body'],
+  },
+})
 ---
 
 <Layout>
@@ -10,33 +20,21 @@ import Ad from '../components/Ad.astro';
 			<section>
 				<h4 class="section__title">New</h4>
 				<div class="new-entry-list">
-					<article class="entry">
-						<a href="/" class="entry__link">
-							<figure><img src="../src/assets/ogimage.jpg" alt="ogimage" width="160" height="160" /></figure>
-							<div class="entry-list-title">
-								<h2 class="title">来るべく春に向けて気持ちを整えるために読みたい3冊。</h2>
-								<p class="date"><time>2025-02-03</time></p>
-							</div>
-						</a>
-					</article>
-					<article class="entry">
-						<a href="/" class="entry__link">
-							<figure><img src="../src/assets/ogimage.jpg" alt="ogimage" width="160" height="160" /></figure>
-							<div class="entry-list-title">
-								<h2 class="title">クソみたいな世界を生き抜くためのパンク的読書。Vol.24</h2>
-								<p class="date"><time>2025-02-03</time></p>
-							</div>
-						</a>
-					</article>
-					<article class="entry">
-						<a href="/" class="entry__link">
-							<figure><img src="../src/assets/ogimage.jpg" alt="ogimage" width="160" height="160" /></figure>
-							<div class="entry-list-title">
-								<h2 class="title">肌寒い秋の夜長にミントティーでも飲みながら読みたい3冊。</h2>
-								<p class="date"><time>2025-02-03</time></p>
-							</div>
-						</a>
-					</article>
+					{
+						articles.map((article) => {
+							return (
+							<article class="entry">
+								<a href={`/posts/${article.slug}`} class="entry__link">
+								<figure><img src="../src/assets/ogimage.jpg" alt="ogimage" width="160" height="160" /></figure>
+								<div class="entry-list-title">
+									<h2 class="title">{article.title}</h2>
+									<p class="date"><time>2025-02-03</time></p>
+								</div>
+								</a>
+							</article>
+							)
+						})
+					}
 				</div>
 				<div class="see-more__button"><a href="/archive">もっとみる</a></div>
 			</section>

@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { newtClient } from '../../lib/newt'
+import type { Article } from '../../lib/newt'
+
+export const getStaticPaths = async () => {
+  const { items: articles } = await newtClient.getContents<Article>({
+    appUid: 'blog',
+    modelUid: 'article',
+    query: {
+      select: ['title', 'slug', 'body'],
+    },
+  })
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }))
+}
+const {article} = Astro.props;
+---
+
+<Layout>
+  <div class="entry-wrapper">
+    <div class="entry-header">
+      <p class="category">Category</p>
+      <h1 class="title">{article.title}</h1>
+      <p class="entory-lead"></p>
+      <p class="date"><time>2025-02-03</time></p>
+    </div>
+    <div set:html={article.body} />
+  </div>
+</Layout>
