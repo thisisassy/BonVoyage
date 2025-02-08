@@ -1,4 +1,48 @@
 :root {
+  // Type
+  --fluid-min-width: 320;
+  --fluid-max-width: 1440;
+  /* Step -2: 7.1111px → 6.8373px */
+  --step--2: clamp(0.4273rem, 0.4508rem + -0.0319vw, 0.4444rem);
+  /* Step -1: 10.6667px → 11.3977px */
+  --step--1: clamp(0.6667rem, 0.6496rem + 0.0852vw, 0.7124rem);
+  /* Step 0: 16px → 19px */
+  --step-0: clamp(1rem, 0.9301rem + 0.3497vw, 1.1875rem);
+  /* Step 1: 24px → 31.673px */
+  --step-1: clamp(1.5rem, 1.3211rem + 0.8943vw, 1.9796rem);
+  /* Step 2: 36px → 52.7989px */
+  --step-2: clamp(2.25rem, 1.8584rem + 1.9579vw, 3.2999rem);
+  /* Step 3: 54px → 88.0158px */
+  --step-3: clamp(3.375rem, 2.5821rem + 3.9645vw, 5.501rem);
+  /* Step 4: 81px → 146.7223px */
+  --step-4: clamp(5.0625rem, 3.5305rem + 7.6599vw, 9.1701rem);
+  /* Step 5: 121.5px → 244.586px */
+  --step-5: clamp(7.5938rem, 4.7246rem + 14.3457vw, 15.2866rem);
+
+  // Space
+  --space-3xs: clamp(0.25rem, 0.2267rem + 0.1166vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4534rem + 0.2331vw, 0.625rem);
+  --space-xs: clamp(0.75rem, 0.7034rem + 0.2331vw, 0.875rem);
+  --space-s: clamp(1rem, 0.9301rem + 0.3497vw, 1.1875rem);
+  --space-m: clamp(1.5rem, 1.3834rem + 0.5828vw, 1.8125rem);
+  --space-l: clamp(2rem, 1.8601rem + 0.6993vw, 2.375rem);
+  --space-xl: clamp(3rem, 2.7902rem + 1.049vw, 3.5625rem);
+  --space-2xl: clamp(4rem, 3.7203rem + 1.3986vw, 4.75rem);
+  --space-3xl: clamp(6rem, 5.5804rem + 2.0979vw, 7.125rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, 0.1101rem + 0.6993vw, 0.625rem);
+  --space-2xs-xs: clamp(0.5rem, 0.3601rem + 0.6993vw, 0.875rem);
+  --space-xs-s: clamp(0.75rem, 0.5868rem + 0.8159vw, 1.1875rem);
+  --space-s-m: clamp(1rem, 0.697rem + 1.5152vw, 1.8125rem);
+  --space-m-l: clamp(1.5rem, 1.1737rem + 1.6317vw, 2.375rem);
+  --space-l-xl: clamp(2rem, 1.4172rem + 2.9138vw, 3.5625rem);
+  --space-xl-2xl: clamp(3rem, 2.3473rem + 3.2634vw, 4.75rem);
+  --space-2xl-3xl: clamp(4rem, 2.8345rem + 5.8275vw, 7.125rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1rem, 0.4872rem + 2.5641vw, 2.375rem);
+
   --primary-color: #222;
   --secondary-color: #888;
   --gray: #666;
