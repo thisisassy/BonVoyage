@@ -134,11 +134,18 @@ figure {
 }
 .entry-image {
   img {
-    aspect-ratio: 16/9;
+    width: 100vw;
+    max-width: 1160px;
+    height: 580px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    aspect-ratio: 2/1;
+    object-fit: cover;
   }
 }
 .entry-content {
-  padding-top: 40px;
+  padding-top: 580px;
   h1,
   h2,
   h3,
