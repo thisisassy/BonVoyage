@@ -8,7 +8,8 @@ export const getStaticPaths = async () => {
     appUid: 'blog',
     modelUid: 'article',
     query: {
-      select: ['title', 'slug', 'body'],
+      select: ['title', 'slug', 'body', '_sys', 'coverImage', 'leadText'],
+      expand: ['categories'],
     },
   })
   return articles.map((article) => ({
@@ -20,13 +21,16 @@ const {article} = Astro.props;
 ---
 
 <Layout>
-  <div class="entry-wrapper">
-    <div class="entry-header">
-      <p class="category">Category</p>
-      <h1 class="title">{article.title}</h1>
-      <p class="entory-lead"></p>
-      <p class="date"><time>2025-02-03</time></p>
-    </div>
-    <div set:html={article.body} />
-  </div>
+  <div class="wrapper">
+    <section class="entry-wrapper">
+      <div class="entry-header">
+        <p class="categories">Cateogry</p>
+        <h1 class="title">{article.title}</h1>
+        <p class="entry-lead">{article.leadText}</p>
+        <p class="date"><time>{new Date(article._sys.createdAt).toISOString().split('T')[0]}</time></p>
+      </div>
+      <figure class="entry-image"><img src={article.coverImage['src']} alt="ogimage" width="160" height="160" /></figure>
+      <div class="entry-content"><div set:html={article.body} /></div>
+    </section>
+</div>
 </Layout>

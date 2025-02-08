@@ -9,7 +9,9 @@ const { items: articles } = await newtClient.getContents<Article>({
   appUid: 'blog',
   modelUid: 'article',
   query: {
-    select: ['title', 'slug', 'body'],
+    select: ['title','_sys', 'slug', 'body', 'coverImage'],
+		order: ['-_sys.createdAt'],
+		limit: 3,
   },
 })
 ---
@@ -25,10 +27,10 @@ const { items: articles } = await newtClient.getContents<Article>({
 							return (
 							<article class="entry">
 								<a href={`/posts/${article.slug}`} class="entry__link">
-								<figure><img src="../src/assets/ogimage.jpg" alt="ogimage" width="160" height="160" /></figure>
+								<figure><img src={article.coverImage['src']} alt="ogimage" width="160" height="160" /></figure>
 								<div class="entry-list-title">
 									<h2 class="title">{article.title}</h2>
-									<p class="date"><time>2025-02-03</time></p>
+									<p class="date"><time>{new Date(article._sys.createdAt).toISOString().split('T')[0]}</time></p>
 								</div>
 								</a>
 							</article>

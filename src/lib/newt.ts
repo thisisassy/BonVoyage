@@ -1,9 +1,12 @@
 import { createClient } from "newt-client-js";
 
 export interface Article {
+  coverImage: any;
+  _sys: any;
   title: string;
   slug: string;
   date: string;
+  leadText: string;
   body: string;
 }
 
