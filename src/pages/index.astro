@@ -3,66 +3,55 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<section>
-		<h4 class="section__title">New</h4>
-		<div class="article__group">
-			<article class="newest">
-				<a href="/posts/">
-					<figure><img src="../src/assets/ogimage.jpg" alt="/title" /></figure>
-					<div class="article__text">
-						<h2 class="title">記事タイトルが入ります。記事タイトルが入ります。</h2>
-						<p class="exerpt">記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。</p>
-					</div>
-				</a>
-				<div class="article__meta">
-					<time datetime="">2025-02-01</time>
-					<p>Category</p>
+	<div class="wrapper">
+		<div class="page-with-sidebar">
+			<section>
+				<h4 class="section__title">New</h4>
+				<div class="new-entry-list">
+					<article>
+						<a href="/">
+							<figure><img src="../src/assets/ogimage.jpg" alt="ogimage" width="160" height="160" /></figure>
+							<div class="entry-list-title">
+								<h2 class="title">記事のタイトルが入ります</h2>
+								<p class="date"><time>2025-02-03</time></p>
+							</div>
+						</a>
+					</article>
+					<article>
+						<a href="/">
+							<figure><img src="../src/assets/ogimage.jpg" alt="ogimage" width="160" height="160" /></figure>
+							<div class="entry-list-title">
+								<h2 class="title">記事のタイトルが入ります</h2>
+								<p class="date"><time>2025-02-03</time></p>
+							</div>
+						</a>
+					</article>
+					<article>
+						<a href="/">
+							<figure><img src="../src/assets/ogimage.jpg" alt="ogimage" width="160" height="160" /></figure>
+							<div class="entry-list-title">
+								<h2 class="title">記事のタイトルが入ります</h2>
+								<p class="date"><time>2025-02-03</time></p>
+							</div>
+						</a>
+					</article>
 				</div>
-			</article>
-			<article class="newest">
-				<a href="/posts/">
-					<figure><img src="../src/assets/ogimage.jpg" alt="/title" /></figure>
-					<div class="article__text">
-						<h2 class="title">記事タイトルが入ります。</h2>
-						<p class="exerpt">記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。</p>
-					</div>
-				</a>
-				<div class="article__meta">
-					<time datetime="">2025-02-01</time>
-					<p>Category</p>
+				<div class="see-more__button"><a href="/archive">もっとみる</a></div>
+			</section>
+			<aside>
+				<div class="sidebar-module__ad">
+					<p>Advertisement</p>
 				</div>
-			</article>
-			<article class="newest">
-				<a href="/posts/">
-					<figure><img src="../src/assets/ogimage.jpg" alt="/title" /></figure>
-					<div class="article__text">
-						<h2 class="title">記事タイトルが入ります。</h2>
-						<p class="exerpt">記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。記事の概要文が3行程度入ります。</p>
+				<div class="sidebar-module__profile">
+					<img src="" alt="profile picture" />
+					<div>
+						<h6>HARUKA</h6>
+						<p>兵庫県出身・ライター<br/ >
+							旅・留学に関する記事を書いています。</p>
 					</div>
-				</a>
-				<div class="article__meta">
-					<time datetime="">2025-02-01</time>
-					<p>Category</p>
+					<a href="/">詳しいプロフィールをみる</a>
 				</div>
-			</article>
+			</aside>
 		</div>
-	</section>
-	<section>
-		<h4 class="section__title">Popular</h4>
-		<div class="article__group">
-			<article class="popular">
-				<a href="/posts/">
-					<figure><img src="../src/assets/ogimage.jpg" alt="/title" /></figure>
-					<div class="article__text">
-						<p class="category">Category</p>
-						<h2 class="title">記事タイトルが入ります。記事タイトルが入ります。</h2>
-					</div>
-				</a>
-				<div class="article__meta">
-					<time datetime="">2025-02-01</time>
-					<li class="meta__tag">タグ</li>
-				</div>
-			</article>
-		</div>
-	</section>
+</div>
 </Layout>
