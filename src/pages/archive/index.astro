@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { newtClient } from '../../lib/newt'
+import type { Article } from '../../lib/newt'
+
+const { items: articles } = await newtClient.getContents<Article>({
+  appUid: 'blog',
+  modelUid: 'article',
+  query: {
+    select: ['title','_sys', 'slug', 'body', 'coverImage'],
+		order: ['-_sys.createdAt'],
+  },
+})
+---
+
+<Layout>
+  <div class="wrapper">
+    <section>
+      <h4 class="section__title">ALL POSTS</h4>
+      <div class="all-entry-list">
+        {
+          articles.map((article) => {
+            return (
+            <article class="entry">
+              <a href={`/posts/${article.slug}`} class="entry__link">
+              <figure><img src={article.coverImage['src']} alt="ogimage" /></figure>
+              <div class="entry-list-title">
+                <p class="categories">Category</p>
+                <h2 class="title">{article.title}</h2>
+                <p class="date"><time>{new Date(article._sys.createdAt).toISOString().split('T')[0]}</time></p>
+              </div>
+              </a>
+            </article>
+            )
+          })
+        }
+      </div>
+  </section>
+</div>
+</Layout>
