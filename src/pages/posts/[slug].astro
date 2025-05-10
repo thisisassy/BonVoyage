@@ -24,7 +24,6 @@ const {article} = Astro.props;
   <div class="wrapper">
     <section class="entry-wrapper">
       <div class="entry-header">
-        <p class="categories">Cateogry</p>
         <h1 class="title">{article.title}</h1>
         <p class="entry-lead">{article.leadText}</p>
         <p class="date"><time>{new Date(article._sys.createdAt).toISOString().split('T')[0]}</time></p>

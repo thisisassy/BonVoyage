@@ -15,6 +15,7 @@ main {
 // Header
 .header__inner {
   padding: 0 72px;
+  border-bottom: 1px solid var(--accent-color);
   @include mixins.respond-to("md") {
     padding: 0 24px;
   }
@@ -22,6 +23,7 @@ main {
     font-family: var(--title-font);
     line-height: 80px;
     text-align: center;
+    color: var(--accent-color);
     a {
       &:hover {
         opacity: 1;
@@ -31,18 +33,6 @@ main {
   nav {
     background-color: var(--white);
   }
-}
-.header__nav {
-  display: flex;
-  justify-content: center;
-  column-gap: 48px;
-  @include mixins.respond-to("md") {
-    column-gap: 24px;
-  }
-}
-.nav__item {
-  display: block;
-  padding: 12px 0;
 }
 
 // Footer
@@ -97,40 +87,26 @@ footer {
     var(--wrapper__max-width)
   );
   margin: 0 auto;
-}
-.page-with-sidebar {
-  display: flex;
-  flex-direction: row;
-  column-gap: var(--space-2xl);
-  @include mixins.respond-to("lg") {
-    flex-direction: column;
-  }
-  section {
-    flex-grow: 4;
-  }
-  aside {
-    flex-grow: 1;
+  @include mixins.respond-to("md") {
+    margin: 0 18px;
+    max-width: 100%;
   }
 }
 section {
-  padding: var(--space-xl) 0 var(--space-2xl);
+  padding: 56px 0 96px;
 }
 .page-single {
   .section__title {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
   }
-}
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--space-xl);
-  padding-top: var(--space-xl);
 }
 .section__title {
   font-size: 24px;
-  margin-bottom: 4px;
+  margin-bottom: 24px;
   @include mixins.respond-to("md") {
-    font-size: 19px;
-    margin-bottom: 8px;
+    font-size: 16px;
   }
+}
+.module__item {
+  padding-top: 56px;
 }

@@ -2,54 +2,73 @@
   // Type
   --fluid-min-width: 320;
   --fluid-max-width: 1440;
-  /* Step -2: 7.1111px → 6.8373px */
-  --step--2: clamp(0.4273rem, 0.4508rem + -0.0319vw, 0.4444rem);
-  /* Step -1: 10.6667px → 11.3977px */
-  --step--1: clamp(0.6667rem, 0.6496rem + 0.0852vw, 0.7124rem);
-  /* Step 0: 16px → 19px */
-  --step-0: clamp(1rem, 0.9301rem + 0.3497vw, 1.1875rem);
-  /* Step 1: 24px → 31.673px */
-  --step-1: clamp(1.5rem, 1.3211rem + 0.8943vw, 1.9796rem);
-  /* Step 2: 36px → 52.7989px */
-  --step-2: clamp(2.25rem, 1.8584rem + 1.9579vw, 3.2999rem);
-  /* Step 3: 54px → 88.0158px */
-  --step-3: clamp(3.375rem, 2.5821rem + 3.9645vw, 5.501rem);
-  /* Step 4: 81px → 146.7223px */
-  --step-4: clamp(5.0625rem, 3.5305rem + 7.6599vw, 9.1701rem);
-  /* Step 5: 121.5px → 244.586px */
-  --step-5: clamp(7.5938rem, 4.7246rem + 14.3457vw, 15.2866rem);
+  /* Step -2: 11.8056px → 12.8px */
+  --step--2: clamp(0.7378rem, 0.7162rem + 0.1081vw, 0.8rem);
+  /* Step -1: 14.1667px → 16px */
+  --step--1: clamp(0.8854rem, 0.8456rem + 0.1993vw, 1rem);
+  /* Step 0: 17px → 20px */
+  --step-0: clamp(1.0625rem, 0.9973rem + 0.3261vw, 1.25rem);
+  /* Step 1: 20.4px → 25px */
+  --step-1: clamp(1.275rem, 1.175rem + 0.5vw, 1.5625rem);
+  /* Step 2: 24.48px → 31.25px */
+  --step-2: clamp(1.53rem, 1.3828rem + 0.7359vw, 1.9531rem);
+  /* Step 3: 29.376px → 39.0625px */
+  --step-3: clamp(1.836rem, 1.6254rem + 1.0529vw, 2.4414rem);
+  /* Step 4: 35.2512px → 48.8281px */
+  --step-4: clamp(2.2032rem, 1.908rem + 1.4758vw, 3.0518rem);
+  /* Step 5: 42.3014px → 61.0352px */
+  --step-5: clamp(2.6438rem, 2.2366rem + 2.0363vw, 3.8147rem);
 
   // Space
-  --space-3xs: clamp(0.25rem, 0.2267rem + 0.1166vw, 0.3125rem);
-  --space-2xs: clamp(0.5rem, 0.4534rem + 0.2331vw, 0.625rem);
-  --space-xs: clamp(0.75rem, 0.7034rem + 0.2331vw, 0.875rem);
-  --space-s: clamp(1rem, 0.9301rem + 0.3497vw, 1.1875rem);
-  --space-m: clamp(1.5rem, 1.3834rem + 0.5828vw, 1.8125rem);
-  --space-l: clamp(2rem, 1.8601rem + 0.6993vw, 2.375rem);
-  --space-xl: clamp(3rem, 2.7902rem + 1.049vw, 3.5625rem);
-  --space-2xl: clamp(4rem, 3.7203rem + 1.3986vw, 4.75rem);
-  --space-3xl: clamp(6rem, 5.5804rem + 2.0979vw, 7.125rem);
+  /* Space 3xs: 4px → 5px */
+  --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
+  /* Space 2xs: 9px → 10px */
+  --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
+  /* Space xs: 13px → 15px */
+  --space-xs: clamp(0.8125rem, 0.769rem + 0.2174vw, 0.9375rem);
+  /* Space s: 17px → 20px */
+  --space-s: clamp(1.0625rem, 0.9973rem + 0.3261vw, 1.25rem);
+  /* Space m: 26px → 30px */
+  --space-m: clamp(1.625rem, 1.538rem + 0.4348vw, 1.875rem);
+  /* Space l: 34px → 40px */
+  --space-l: clamp(2.125rem, 1.9946rem + 0.6522vw, 2.5rem);
+  /* Space xl: 51px → 60px */
+  --space-xl: clamp(3.1875rem, 2.9918rem + 0.9783vw, 3.75rem);
+  /* Space 2xl: 68px → 80px */
+  --space-2xl: clamp(4.25rem, 3.9891rem + 1.3043vw, 5rem);
+  /* Space 3xl: 102px → 120px */
+  --space-3xl: clamp(6.375rem, 5.9837rem + 1.9565vw, 7.5rem);
 
   /* One-up pairs */
-  --space-3xs-2xs: clamp(0.25rem, 0.1101rem + 0.6993vw, 0.625rem);
-  --space-2xs-xs: clamp(0.5rem, 0.3601rem + 0.6993vw, 0.875rem);
-  --space-xs-s: clamp(0.75rem, 0.5868rem + 0.8159vw, 1.1875rem);
-  --space-s-m: clamp(1rem, 0.697rem + 1.5152vw, 1.8125rem);
-  --space-m-l: clamp(1.5rem, 1.1737rem + 1.6317vw, 2.375rem);
-  --space-l-xl: clamp(2rem, 1.4172rem + 2.9138vw, 3.5625rem);
-  --space-xl-2xl: clamp(3rem, 2.3473rem + 3.2634vw, 4.75rem);
-  --space-2xl-3xl: clamp(4rem, 2.8345rem + 5.8275vw, 7.125rem);
+  /* Space 3xs-2xs: 4px → 10px */
+  --space-3xs-2xs: clamp(0.25rem, 0.1196rem + 0.6522vw, 0.625rem);
+  /* Space 2xs-xs: 9px → 15px */
+  --space-2xs-xs: clamp(0.5625rem, 0.4321rem + 0.6522vw, 0.9375rem);
+  /* Space xs-s: 13px → 20px */
+  --space-xs-s: clamp(0.8125rem, 0.6603rem + 0.7609vw, 1.25rem);
+  /* Space s-m: 17px → 30px */
+  --space-s-m: clamp(1.0625rem, 0.7799rem + 1.413vw, 1.875rem);
+  /* Space m-l: 26px → 40px */
+  --space-m-l: clamp(1.625rem, 1.3207rem + 1.5217vw, 2.5rem);
+  /* Space l-xl: 34px → 60px */
+  --space-l-xl: clamp(2.125rem, 1.5598rem + 2.8261vw, 3.75rem);
+  /* Space xl-2xl: 51px → 80px */
+  --space-xl-2xl: clamp(3.1875rem, 2.5571rem + 3.1522vw, 5rem);
+  /* Space 2xl-3xl: 68px → 120px */
+  --space-2xl-3xl: clamp(4.25rem, 3.1196rem + 5.6522vw, 7.5rem);
 
   /* Custom pairs */
-  --space-s-l: clamp(1rem, 0.4872rem + 2.5641vw, 2.375rem);
+  /* Space s-l: 17px → 40px */
+  --space-s-l: clamp(1.0625rem, 0.5625rem + 2.5vw, 2.5rem);
 
+  --base-color: #faf0eb;
   --primary-color: #222;
   --secondary-color: #888;
   --gray: #666;
   --light-gray: #999;
   --white: #fff;
 
-  --accent-color: #ff8c42;
+  --accent-color: #f55a32;
   --text-link-color: #0066cc;
   --text-link-hover: #003366;
   --text-link-visited: #551a8b;
@@ -58,5 +77,5 @@
   // border
   --border-color: #ddd;
 
-  --title-font: "Caveat", san-serif;
+  --title-font: "Fugaz One", san-serif;
 }

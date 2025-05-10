@@ -24,14 +24,13 @@ const randomArticles = shuffleArray(articles).slice(0, 6);
 
 <Layout>
 	<div class="wrapper">
-		<div class="page-with-sidebar">
-			<section>
-				<h4 class="section__title">New</h4>
+			<section class="section__new">
+				<h4 class="section__title">WHAT’S NEW ✨</h4>
 				<div class="new-entry-list">
 					{
 						latestArticles.map((article) => {
 							return (
-							<article class="entry">
+							<article>
 								<a href={`/posts/${article.slug}`} class="entry__link">
 								<figure><img src={article.coverImage['src']} alt="ogimage" /></figure>
 								<div class="entry-list-title">
@@ -44,24 +43,15 @@ const randomArticles = shuffleArray(articles).slice(0, 6);
 						})
 					}
 				</div>
-				<div class="see-more__button"><a href="/archive">もっとみる</a></div>
+				<div class="module__item"><About /></div>
 			</section>
-			<aside class="sidebar">
-				<div class="sidebar-module__ad">
-					<Ad />
-				</div>
-				<div class="sidebar-module__profile">
-					<About />
-				</div>
-			</aside>
-		</div>
-		<div class="page-single">
+		<!-- <div class="page-single">
 			<section>
 				<h4 class="section__title">Pickup</h4>
 				<div class="popular-entry-list">
 					{randomArticles.length > 0 ? (
 						randomArticles.map(article => (
-						<article class="entry">
+						<article>
 						<a href={`/posts/${article.slug}`} class="entry__link">
 							<figure><img src={article.coverImage.src} alt={article.title} class="pickup-image" /></figure>
 							<div class="entry-list-title">
@@ -76,7 +66,8 @@ const randomArticles = shuffleArray(articles).slice(0, 6);
 						<p>記事がありません</p>
 					)}
 				</div>
+				<div class="see-more__button"><a href="/archive">もっとみる</a></div>
 			</section>
-		</div>
+		</div> -->
 </div>
 </Layout>
